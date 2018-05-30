@@ -55,7 +55,8 @@ MongoClient.connect('mongodb://mongodb:27017/TodoApp', {
     // });
 
     // Fetch all Todos with specific name
-    db.collection('Users').find({name: 'Shailja'}).toArray().then((docs) => {
+    var usersCol = db.collection('Users');
+    usersCol.find({name: 'Shailja'}).toArray().then((docs) => {
         console.log('User Shailja Found?');
         console.log(JSON.stringify(docs, undefined, 2));
     }, (err) => {
